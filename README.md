@@ -56,4 +56,4 @@ Some screenshots are sped up, so the ReadMe looks more appealing.
 
 #### Text Clock
 - **Text-Field:** \
-  <code>``` eval let frmt=t=>(t<10?'0':'')+t;`${frmt(new Date().getHours())}:${frmt(new Date().getMinutes())}:${frmt(new Date().getSeconds())} • Time_24` ```</code>
+  <code>``` eval let frmt=t=>(t<10?'0':'')+t;`${frmt(new Date().getHours())}:${frmt(new Date().getMinutes())}:${frmt(new Date().getSeconds())} • Time_24`; ```</code>
