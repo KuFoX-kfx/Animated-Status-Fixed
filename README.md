@@ -52,8 +52,8 @@ Some screenshots are sped up, so the ReadMe looks more appealing.
 
 #### Clock
 - **Emoji-Field:** \
-  <code> |JS| ['🕛','🕐','🕑','🕒','🕓','🕔','🕕','🕖','🕗','🕘','🕙','🕚'][((new Date()).getHours()%12)]; </code>
+  <code>``` eval ['🕛','🕐','🕑','🕒','🕓','🕔','🕕','🕖','🕗','🕘','🕙','🕚'][((new Date()).getHours()%12)]; ```</code>
 
 #### Text Clock
 - **Text-Field:** \
-  <code> |JS| let frmt=t=>(t<10?'0':'')+t;`${frmt(new Date().getHours())}:${frmt(new Date().getMinutes())}:${frmt(new Date().getSeconds())} • Time_24` </code>
+  <code>``` eval let frmt=t=>(t<10?'0':'')+t;`${frmt(new Date().getHours())}:${frmt(new Date().getMinutes())}:${frmt(new Date().getSeconds())} • Time_24` ```</code>
