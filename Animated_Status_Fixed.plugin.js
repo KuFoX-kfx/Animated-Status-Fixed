@@ -8,11 +8,11 @@ class AnimatedStatusFixed {
 	getDescription() { return "Return Animate your Discord status"; }
 
 	SetData(key, value) {
-		BdApi.setData("AnimatedStatusFixed.kfx", key, value);
+		BdApi.setData("Animated_Status_Fixed-kfx", key, value);
 	}
 
 	GetData(key) {
-		return BdApi.getData("AnimatedStatusFixed.kfx", key);
+		return BdApi.getData("Animated_Status_Fixed-kfx", key);
 	}
 
 	/* Code related to Animations */
