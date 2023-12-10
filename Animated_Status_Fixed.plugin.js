@@ -1,10 +1,10 @@
-//META{"name":"Animated-Status-Fixed","website":"https://github.com/KuFoX-kfx/Animated-Status-Fixed"}*//
+//META{"name":"AnimatedStatusFixed","website":"https://github.com/KuFoX-kfx/Animated-Status-Fixed"}*//
 
 class AnimatedStatusFixed {
 	/* BD functions */
 	getName() { return "Animated Status Fixed"; }
-	getVersion() { return "0.5"; }
-	getAuthor() { return "KuFoX (original By: toluschr)"; }
+	getVersion() { return "0.5.0"; }
+	getAuthor() { return "kufox (original By: toluschr)"; }
 	getDescription() { return "Return Animate your Discord status"; }
 
 	SetData(key, value) {
@@ -40,7 +40,7 @@ class AnimatedStatusFixed {
 
 	start() {
 		if (this.animation.length == 0)
-			BdApi.showToast("Animated Status Fixed: No status set. Go to |Settings > Plugins| to set a custom animation!");
+			BdApi.showToast("Animated Status Fixed: No status set. Go to |Settings > Plugins| to set a custom animation!", {type: "warning", timeout: "5000"});
 		else
 			this.AnimationLoop();
 	}
@@ -65,7 +65,7 @@ class AnimatedStatusFixed {
 	}
 
 	async ResolveStatusField(text = "") {
-		let Prefix = "|JS| ";
+		let Prefix = "eval ";
 		if (!text.startsWith(Prefix)) return text;
 
 		try {
