@@ -1,12 +1,15 @@
-//META{"name":"AnimatedStatusFixed","website":"https://github.com/KuFoX-kfx/Animated-Status-Fixed"}*//
-
+/**
+ * @name AnimatedStatusFixed
+ * @author KuFoX, (orignal by: toluschr)
+ * @description Return Animated Status by KuFoX
+ * @version 0.5.2
+ * @authorId 356016660794310656
+ * @donate https://www.donationalerts.com/r/kufox
+ * @website https://github.com/KuFoX-kfx/Animated-Status-Fixed
+ * @source https://github.com/KuFoX-kfx/Animated-Status-Fixed/blob/main/Animated_Status_Fixed.plugin.js
+ */
 class AnimatedStatusFixed {
-	/* BD functions */
-	getName() { return "Animated Status Fixed"; }
-	getVersion() { return "0.5.0"; }
-	getAuthor() { return "kufox (original By: toluschr)"; }
-	getDescription() { return "Return Animate your Discord status"; }
-
+	
 	SetData(key, value) {
 		BdApi.setData("Animated_Status_Fixed-kfx", key, value);
 	}
@@ -21,17 +24,15 @@ class AnimatedStatusFixed {
 		this.kMinTimeout = 15000;
 		this.cancel = undefined;
 
-		this.animation = this.GetData("animation") || [];
+		this.animation = this.GetData("animation") || [{"text": "• Animated Status Fixed By KuFoX •"}];
 		this.timeout = this.GetData("timeout") || this.kMinTimeout;
 		this.randomize = this.GetData("randomize") || false;
 		Status.authToken = this.GetData("authToken") || "NOT SET";
-		this.currentUser = this.GetData("username") || "NOT SET";
 
 		// Import Older Config Files
 		if (typeof this.timeout == "string"){
 			this.timeout = parseInt(this.timeout);}
 		this.Authkey = Status.authToken;
-		this.Username = this.currentUser;
 		if (this.animation.length > 0 && Array.isArray(this.animation[0]))
 			this.animation = this.animation.map(em => this.ConfigObjectFromArray(em));
 
@@ -110,12 +111,11 @@ class AnimatedStatusFixed {
 		let textWidget = hbox.appendChild(GUI.newInput(text, "Text"));
 		textWidget.style.marginRight = this.kSpacing;
 
-		let emojiWidget = hbox.appendChild(GUI.newInput(emoji_name, "👍" + (this.currentUser.premiumType ? " / Nitro Name" : "")));
+		let emojiWidget = hbox.appendChild(GUI.newInput(emoji_name, "👍"));
 		emojiWidget.style.marginRight = this.kSpacing;
 		emojiWidget.style.width = "140px";
 
 		let optNitroIdWidget = hbox.appendChild(GUI.newInput(emoji_id, "Nitro ID"));
-		if (!this.currentUser.premiumType) optNitroIdWidget.style.display = "none";
 		optNitroIdWidget.style.marginRight = this.kSpacing;
 		optNitroIdWidget.style.width = "140px";
 
@@ -209,15 +209,10 @@ class AnimatedStatusFixed {
 		let timeout = settings.appendChild(GUI.newNumericInput(this.timeout, this.kMinTimeout));
 		timeout.style.marginBottom = "10px";
 
-		//AuthKey and Username
+		//AuthKey
 		settings.appendChild(GUI.newLabel("Enter your auh key"));
 		let Authkey = settings.appendChild(GUI.AuthkeyInput(this.Authkey));
 		Authkey.style.marginBottom = "10px";
-
-		settings.appendChild(GUI.newLabel("Enter your username"));
-		let Username = settings.appendChild(GUI.UsernameInput(this.Username));
-		Username.style.marginBottom = "25px";
-
 
 		// Animation Container
 		settings.appendChild(GUI.newLabel("Animation"));
@@ -253,7 +248,6 @@ class AnimatedStatusFixed {
 				this.SetData("randomize", this.randomize);
 				this.SetData("timeout", parseInt(timeout.value));
 				this.SetData("authToken", Authkey.value);
-				this.SetData("username", Username.value);
 				this.SetData("animation", this.JSONFromEditor(edit));
 			} catch (e) {
 				BdApi.showToast(e, {type: "error"});
