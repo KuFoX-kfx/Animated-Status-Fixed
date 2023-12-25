@@ -210,7 +210,7 @@ class AnimatedStatusFixed {
 		timeout.style.marginBottom = "10px";
 
 		//AuthKey
-		settings.appendChild(GUI.newLabel("Enter your auh key"));
+		settings.appendChild(GUI.newLabel("Enter your API Key. https://discordhelp.net/discord-token"));
 		let Authkey = settings.appendChild(GUI.AuthkeyInput(this.Authkey));
 		Authkey.style.marginBottom = "10px";
 
