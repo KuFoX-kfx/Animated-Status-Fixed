@@ -1,6 +1,8 @@
 # Animated-Status-Fixed
 
+
 * [Usage](#Usage)
+* [Support](#Support)
   * [Timeout](#Timeout)
   * [The Editor](#The-Editor)
   * [Emojis](#Emojis)
@@ -8,21 +10,22 @@
     * [Nitro Emoji](#Nitro-Emoji)
   * [Examples](#Examples)
 
-
 ## Usage
-Open Discord, go to Settings\>Plugins, enable AnimatedStatus and click on Settings.\
+Open Better Discord, go to Settings\>Plugins, enable AnimatedStatus and click on Settings.\
 Enter the required information into the input fields and click the `save` button.
 Clicking `done` without saving will discard your settings.
+
+## Support
+If you want support me, you can donate. I will be very grateful. 
+https://www.donationalerts.com/r/kufox
+Unfortunately, I do not accept art, because I have not yet come up with my character.
+Also you can gift me a furry game in steam XD
 
 ### Timeout
 The value specifies the length of each animation step in milliseconds.
 Example: With a timeout of 2000, the following animation would take 4 seconds to complete, as 2 keyframes last 2 seconds each.
-```
-abc
-def
-```
-To prevent the discord server from being spammed with requests, the minimum allowed timeout is hardcoded to be 2.9 seconds. \
-Logically, the animation timeout should be at least `2900`. At best, it should be roughly `10000` milliseconds (10 seconds) for the animation to look smooth on other clients. \
+To prevent the discord server from being spammed with requests, the minimum allowed timeout is hardcoded to be 15 seconds. \
+Logically, the animation timeout should be at least `15000`. At best, it should be roughly `20000` milliseconds (20 seconds) for the animation to look smooth on other clients. \
 In the mobile app, the status isn't updated consistently, i.e. the list of server members is updated based on the users actions in the app. Don't be surprised, if the animation doesn't appear smooth, or skips frames. \
 ^ According to [@pintoso](https://github.com/pintoso)
 
